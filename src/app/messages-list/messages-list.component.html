@@ -1,0 +1,15 @@
+<div class="messages_window">
+  <h1>Messages:</h1>
+  <div  >
+      <div *ngFor="let msg of messages"> 
+          {{msg.id +":"+ msg.text }}
+      </div>
+  </div>
+</div>
+<style>
+  .messages_window{
+    height: 200px;    margin: 20px;
+    border: 2px solid red
+
+  }
+  </style>
