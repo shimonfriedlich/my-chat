@@ -11,6 +11,7 @@ import { SendMessagesBarComponent } from './send-messages-bar/send-messages-bar.
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database'
 import { environment } from 'src/environments/environment';
+import { MessageServiceService } from 'src/app/services/message-service.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    MessageServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
