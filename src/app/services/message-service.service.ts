@@ -11,6 +11,7 @@ export class MessageServiceService {
   
 
   public getMessages():Observable<Message[]>{
+    //return this.db.list('msgs').valueChanges();
     return of(this.messages); //this.http.get<Question[]>('assets/mock/questions.json')
   }
   
@@ -20,7 +21,7 @@ export class MessageServiceService {
     return of(true);
   }
 
-  constructor(db : AngularFireDatabase) {
+  constructor(private db : AngularFireDatabase) {
 
     this.fireList = db.list("items");
 
@@ -47,8 +48,8 @@ export class MessageServiceService {
 
    }
   
-   setMessage(){
-     
+   setMessage(msg: Message){
+     this.db.list('msgs').push(msg);
    }
    
   }
