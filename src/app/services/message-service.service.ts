@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Message } from 'src/app/models/message';
 import { Observable, of, from, Subject, BehaviorSubject } from 'rxjs';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Injectable()
 export class MessageServiceService {
   private messages: Message[];
-   xyz;
+  fireList: AngularFireList<Message>;
+  xyz;
+  
 
   public getMessages():Observable<Message[]>{
     return of(this.messages); //this.http.get<Question[]>('assets/mock/questions.json')
@@ -18,7 +20,9 @@ export class MessageServiceService {
     return of(true);
   }
 
-  constructor() {
+  constructor(db : AngularFireDatabase) {
+
+    this.fireList = db.list("items");
 
     this.messages = [
       {
@@ -43,5 +47,8 @@ export class MessageServiceService {
 
    }
   
+   setMessage(){
+     
+   }
    
   }
