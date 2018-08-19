@@ -7,13 +7,17 @@ import { MessageServiceService } from 'src/app/services/message-service.service'
   styleUrls: ['./send-messages-bar.component.css']
 })
 export class SendMessagesBarComponent implements OnInit {
-  
-  constructor(private messageServiceService:MessageServiceService) {
-
+  private messageServiceService:MessageServiceService
+  constructor() {
+    this.messageServiceService = new MessageServiceService();
   }
   public msgClick(i){
     console.log(i.value + " is an input from user");
-    this.messageServiceService.sendMessage(i.value);
+    this.messageServiceService.sendMessage(i.value).subscribe(res=>{
+      console.log(res);
+    }
+      
+    );
     
   }
   ngOnInit() {

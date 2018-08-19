@@ -8,6 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ChatRoomComponent } from './chat-room/chat-room.component';
 import { MessagesListComponent } from './messages-list/messages-list.component';
 import { SendMessagesBarComponent } from './send-messages-bar/send-messages-bar.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database'
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { SendMessagesBarComponent } from './send-messages-bar/send-messages-bar.
     SendMessagesBarComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     BrowserModule,
     AppRoutingModule
   ],

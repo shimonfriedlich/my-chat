@@ -10,15 +10,13 @@ import { MessageServiceService } from 'src/app/services/message-service.service'
 })
 export class MessagesListComponent implements OnInit {
   @Input() messages:Message[];
-  constructor(private messageServiceService:MessageServiceService) {
-
-    messageServiceService.getMessages().subscribe(x=> {
-      this.messages = x; //x is the data return from service
-
-    });
+  
+  constructor() {
+  
    }
 
   ngOnInit() {
+  
   }
 
 }
