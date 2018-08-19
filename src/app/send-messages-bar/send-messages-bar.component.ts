@@ -7,8 +7,7 @@ import { MessageServiceService } from 'src/app/services/message-service.service'
   styleUrls: ['./send-messages-bar.component.css']
 })
 export class SendMessagesBarComponent implements OnInit {
-  //@Output() msg;
-
+  
   constructor(private messageServiceService:MessageServiceService) {
 
   }

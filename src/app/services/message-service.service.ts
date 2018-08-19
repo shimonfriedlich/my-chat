@@ -19,13 +19,13 @@ export class MessageServiceService {
     this.messages =  [
       {
         id: 1,
-        text: 'aaaaa'
+        text: 'msg 1'
       },
       {id: 2,
-        text:'dfdddd'
+        text:'msg 2'
       },
       {id: 3,
-        text:'asdfasdfasdfad'
+        text:'msg 3'
       }
       ];
 
