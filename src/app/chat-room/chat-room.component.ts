@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from 'src/app/models/message';
-import { MessageServiceService } from 'src/app/services/message-service.service';
+//import { MessageServiceService } from 'src/app/services/message-service.service';
+import { MsgsControllerService } from 'src/app/services/msgs-controller.service';
 
 @Component({
   selector: 'app-chat-room',
@@ -10,16 +11,21 @@ import { MessageServiceService } from 'src/app/services/message-service.service'
 export class ChatRoomComponent implements OnInit {
 
   private messages : Message[];
-  private messageServiceService: MessageServiceService;
-  constructor() { 
-    this.messageServiceService = new MessageServiceService();
+ 
+  constructor( private messageServiceService: MsgsControllerService) { 
   }
 
   ngOnInit() {
     this.messageServiceService.getMessages().subscribe((result) => {
       this.messages = result;
-      console.log(1)
-    })
+      console.log('result:');
+      console.log(result);
+    });
   }
 
+  sb() {
+    //debugger;
+    ////console.log(this.messageServiceService.messages);
+   
+  }
 }
