@@ -11,8 +11,11 @@ import { SendMessagesBarComponent } from './send-messages-bar/send-messages-bar.
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database'
 import { environment } from 'src/environments/environment';
-import { MessageServiceService } from './services/message-service.service';
+//import { MessageServiceService } from './services/message-service.service';
 import { MsgsControllerService } from './services/msgs-controller.service';
+import { MyFormComponent } from './my-form/my-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -21,13 +24,16 @@ import { MsgsControllerService } from './services/msgs-controller.service';
     FooterComponent,
     ChatRoomComponent,
     MessagesListComponent,
-    SendMessagesBarComponent
+    SendMessagesBarComponent,
+    MyFormComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
+
   ],
   providers: [
     MsgsControllerService

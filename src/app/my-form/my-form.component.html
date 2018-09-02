@@ -1,0 +1,23 @@
+<p>
+  my-form works!
+</p>
+<div>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    
+    <label>
+      First Name:
+      <input type="text" formControlName="name">
+    </label>
+  
+    <label>
+      Last Name:
+      <select formControlName="class">
+          <option *ngFor='let cls of classes' [value]="cls">{{cls}}</option>
+      </select >
+    
+    </label>
+    <input type="submit">
+
+  
+  </form>
+</div>
